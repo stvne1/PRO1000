@@ -1,0 +1,351 @@
+/* Generell styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ddd;
+    border-radius: 40px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 34px;
+    width: 34px;
+    left: 3px;
+    bottom: 3px;
+    background: url('sunIcon.png') center/cover no-repeat;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #4B0082;
+}
+
+input:checked + .slider:before {
+    transform: translateX(38px); /* Justert for ny bredde */
+    background: url('sunPurple.png') center/cover no-repeat;
+    background-color: #4B0082;
+    border-radius: 50%;
+}
+
+/* Navbar styling */
+header {
+    background-color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.logo {
+    max-width: 120px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #4B0082;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #4B0082;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-color: #4B0082; /* Lilla farge fra logo */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 3rem;
+    transition: color 0.3s;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.hero .btn {
+    background: white;
+    color: #4B0082;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero .btn:hover {
+    background: #6A0DAD;
+    color: white;
+}
+/* Pricing-seksjon */
+.pricing-section {
+    text-align: center;
+    padding: 50px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+#teacher-container {
+    display: flex;
+    justify-content: center; /* Centers items in the row */
+    align-items: stretch; /* Makes all items stretch to equal height */
+    gap: 20px; /* Space between teacher cards */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.teacher-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    text-align: center;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is distributed */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.teacher-card img {
+    width: 100%;
+    height: 250px; /* Set a fixed height for images */
+    object-fit: cover; /* Ensures the image covers the space without distortion */
+    border-radius: 8px;
+}
+
+.teacher-name, .teacher-subject, .stars {
+    margin: 10px 0;
+}
+
+.stars {
+    font-size: 18px;
+    color: gold;
+}
+
+/* Hover Effect */
+.teacher-card:hover {
+    transform: scale(1.05);
+}
+
+/* Ensures all teacher cards have the same height */
+@media (min-width: 768px) {
+    .teacher-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+}
+
+/* Info Box */
+.teacher-info-box {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.teacher-section h2{
+    text-align: center;
+}
+
+/* Standard info-boks plassert til høyre */
+.teacher-info-box.right {
+    left: 105%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Info-boks plassert til venstre */
+.teacher-info-box.left {
+    right: 105%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.pricing-card {
+    background: white;
+    border: 2px solid #4B0082;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pricing-card h3 {
+    color: #4B0082;
+    transition: color 0.3s;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.pricing-card ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+    justify-content: center;
+}
+
+.pricing-card button {
+    background: #4B0082;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: auto;
+    transition: background-color 0.3s;
+}
+
+.pricing-card button:hover {
+    background: #6A0DAD;
+}
+
+/* Dark mode */
+.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+.dark-mode header {
+    background-color: #333;
+}
+
+.dark-mode nav ul li a {
+    color: #ddd;
+}
+
+.dark-mode .hero {
+    background-color: #444;
+}
+
+.dark-mode .hero h1, .dark-mode .hero p {
+    color: white;
+}
+
+.dark-mode .teacher-card {
+    background-color: #444;
+    color: white;
+    border-color: #aaa;
+}
+
+.dark-mode .teacher-section {
+    background-color: #333;
+    color: white;
+}
+
+
+
+.dark-mode .pricing-section {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode .pricing-card {
+    background-color: #444;
+    color: white;
+    border-color: #aaa;
+}
+
+.dark-mode .pricing-card h3 {
+    color: #ddd;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #4B0082;
+    color: white;
+    margin-top: 50px;
+    transition: background-color 0.3s;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}

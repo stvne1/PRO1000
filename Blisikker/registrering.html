@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opprett en brukerkonto</title>
+    <style>
+        body {
+            background-color: #f4f1fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+            padding-top: 50px;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        .logo {
+            width: 120px;
+            margin: 20px auto;
+            display: block;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6a0dad;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .button:hover {
+            background-color: #4f0b9c;
+        }
+        .back-link {
+            display: block;
+            color: #6a0dad;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="Blisikker_Hjem.html" class="back-link">← Tilbake til Hjem</a>
+        <img src="c:\Users\Kim Nguyen\Documents\USN-fag\PRO1000\BliSikker Nettside\BliSikker\Registrer\BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="logo">
+        <h2>Opprett en brukerkonto</h2>
+        <form id="registerForm" action="Registrer.php" method="POST">
+            <input type="text" name="fornavn" class="input-field" placeholder="Fornavn" required>
+            <input type="text" name="etternavn" class="input-field" placeholder="Etternavn" required>
+            <input type="email" name="epost" class="input-field" placeholder="E-post" required>
+            <input type="password" name="passord" class="input-field" placeholder="Passord" required>
+            <input type="password" name="bekreft_passord" class="input-field" placeholder="Bekreft passord" required>
+            <button type="submit" class="button">Opprett bruker</button>
+        </form>
+        <p>Allerede registrert? <a href="../Registrer/logginn.php" class="back-link">Logg inn</a></p>
+    </div>
+</body>
+</html>
